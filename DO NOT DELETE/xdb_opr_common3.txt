@@ -1,0 +1,21 @@
+      "Bar Stresses", "Axial", "At Center", "", "AsIs", "DeriveAverage", "All", "ShapeFunc", "", 0. )
+      res_display_report_create( "", "Elements", 1, grp, 22, ["ReportType:Summary", @
+      "ReportTitle:$PRODUCT - Analysis Code: $CODE_NAME ", "ReportTitle:", @
+      "ReportTitle:Load Case: $LC_NAME, $SC_NAME ", "ReportTitle:", @
+      "ReportTitle:Result $PRES_NAME, $SRES_NAME - Layer $LYR_NAME ", @
+      "ReportTitle:", "ReportTitle:Entity: Element Tensor", "ReportHeader:Page $PAGE", @
+      "ReportFooter:$DATE", "ReportPage:Height=52,Width=128,TopMargin=5,LeftMargin=8,BottomMargin=5", @
+      "ReportPagination:OFF", "ReportPageNumber:1", "ReportPageAlignment:Left", @
+      "ReportTColumn:1,Entity ID,ID,%I8%", "ReportTColumn:2,von Mises,VONM,%F12.2%", @
+      "ReportTColumn:3,X Component,XX,%F12.2%", "EntitySort:LoadCase", @
+      "ValueSort:1,Ascending,Algebraic", "ColumnHeaders:ON", "Filter:None", "ScaleFactor:1."] )
+      res_display_report_write( "", 0, "Tensor", "Centroidal", "append", "beam" )
+      text_open("beam", "OA", 0, 0, channel)
+      text_write_string(channel, group(i))
+      text_close(channel, "")
+
+    END FOR
+
+  END FOR
+
+END FUNCTION

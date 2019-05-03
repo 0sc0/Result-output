@@ -1,0 +1,7 @@
+      grp(1)=group(i)
+      grp1(1)=group1(i)
+      aa=str_from_integer(j)//":"//str_from_integer(i)
+      dump(aa)
+
+      $=== shell ==================================================================================
+      res_data_load_dbresult( 0, "Centroidal", "Tensor",load_case(j), "A
